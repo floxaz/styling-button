@@ -1,0 +1,56 @@
+.btn {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    width: 22rem;
+    height: 5.5rem;
+    border-radius: 100px;
+    border: none;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    cursor: pointer;
+    position: relative;
+    transition: all .2s;
+
+    &:focus {
+        outline: none;
+    }
+    
+    &:before,
+    &:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #fff;
+        transition: all .2s;
+    }
+
+    &:before {
+        content: "Only 4 rooms left";
+        transform: translate(-50%, -50%) translateY(-4rem);
+        width: inherit;
+        opacity: 0;
+    }
+
+    &:after {
+        content: "Book now";
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+
+    &:hover {
+        background-image: linear-gradient(to right, var(--color-primary-dark), var(--color-primary-light));
+    }
+
+    &:hover:before {
+        transform: translate(-50%, -50%) translateY(0);
+        opacity: 1;
+    }
+
+    &:hover:after {
+        transform: translate(-50%, -50%) translateY(4rem);
+        opacity: 0;
+    }
+}
